@@ -1,0 +1,31 @@
+[package]
+name = "my-token"
+version = "0.1.2"
+edition = "2021"
+
+[dependencies]
+stylus-sdk = "0.6.0"
+openzeppelin-stylus = "0.1.1"
+motsu = "0.2.0"
+alloy-sol-types = "0.7.6"
+
+[features]
+
+[lib]
+crate-type = ["lib", "cdylib"]
+
+[workspace]
+
+[profile.release]
+codegen-units = 1
+panic = "abort"
+opt-level = "z"
+strip = true
+lto = true
+debug = false
+rpath = false
+debug-assertions = false
+incremental = false
+
+[profile.dev]
+panic = "abort"
