@@ -97,6 +97,6 @@ mod tests {
         contract.ownable._owner.set(not_owner_address);
         let result = contract.mint(test_address,ten); 
 
-        assert!(matches!(result,Err(Error::UnauthorizedAccount(_))))
+        assert!(matches!(result,Err(Error::Ownable(_))))
     }
 }
